@@ -45,7 +45,7 @@ http:cachedTemperature.url=http://www.mytaglist.com/ethDownloadMultiStatsCSV.asp
 http:cachedTemperature.updateInterval=600000
 ```
 
-Create a new item in your .items file of your choice. This uses OpenHAB's HTTP Binding you created in the openhab.cfg and links it to an item. The temperature value will now be pulled from the CSV file. Notice the `JS(wirelessTagTemp.js)` section. This is IMPORTANT. It tells OpenHAB to transform the return value through a javascript function. You can find the JS itself in this repo, make sure you copy it to your `Configurations/Transform` folder.
+Create a new item in your .items file of your choice. This uses OpenHAB's HTTP Binding you created in the openhab.cfg and links it to an item. The temperature value will now be pulled from the CSV file. Notice the `JS(wirelessTagTemp.js)` section. This is IMPORTANT. It tells OpenHAB to transform the return value through a javascript function. You can find the [JS itself in this repo](blob/master/transform/wirelessTagTemp.js), make sure you copy it to your `Configurations/Transform` folder.
 ```
 Number		Temperature_Living_Room		"Living Room [%.1f °C]"		<temperature>	(Groupname)		{ http="<[cachedTemperature:60000:JS(wirelessTagTemp.js)]" }
 
